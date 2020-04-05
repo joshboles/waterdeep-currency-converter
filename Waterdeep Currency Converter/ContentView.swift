@@ -8,14 +8,99 @@
 
 import SwiftUI
 
+
 struct ContentView: View {
-    var body: some View {
-        Text("Hello, World!")
+  @State var inputValue: Double = 1.0
+  @State private var inputCurrency = 0
+  let currencies = ["Copper Nibs", "Silver Shards", "Gold Dragons", "Brass Taols", "Platinum Suns", "Platinum Harbor Moons"]
+  
+  private var copperNibs: Double {
+    switch(inputCurrency) {
+    case 0:
+      return inputValue * 1.0
+    case 1:
+      return inputValue * 10.0
+    case 2:
+      return inputValue * 100.0
+    case 3:
+      return inputValue * 200.0
+    case 4:
+      return inputValue * 1000.0
+    case 5:
+      return inputValue * 5000.0
+    default:
+      return 0.0
     }
+  }
+  
+  private var silverShards: Double {
+    return Double(copperNibs / 10.0)
+  }
+  private var goldDragons: Double {
+    return Double(copperNibs / 100.0)
+  }
+  private var brassTaols: Double {
+    return Double(copperNibs / 200.0)
+  }
+  private var platinumSuns: Double {
+    return Double(copperNibs / 1000.0)
+  }
+  private var platinumHarborMoons: Double {
+     return Double(copperNibs / 5000)
+  }
+  
+  var body: some View {
+    NavigationView {
+      Form {
+        Section {
+          TextField("Amount", value: $inputValue, formatter: NumberFormatter())
+            .keyboardType(.decimalPad)
+          
+          Picker("Select currency", selection: $inputCurrency) {
+            ForEach(0 ..< currencies.count) {
+              Text(self.currencies[$0])
+            }
+          }
+        }
+
+        Section(header: Text("Input equivalents")) {
+          Text("\(self.copperNibs.removeZerosFromEnd()) copper nibs")
+          .padding()
+        
+          Text("\(self.silverShards.removeZerosFromEnd()) silver shards")
+          .padding()
+        
+          Text("\(self.goldDragons.removeZerosFromEnd()) gold dragons")
+          .padding()
+        
+          Text("\(self.brassTaols.removeZerosFromEnd()) brass taols")
+          .padding()
+        
+          Text("\(self.platinumSuns.removeZerosFromEnd()) platinum suns")
+          .padding()
+        
+          Text("\(self.platinumHarborMoons.removeZerosFromEnd()) platinum harbor moons")
+          .padding()
+        }
+      }
+      .navigationBarTitle(Text("Waterdeep Currency"))
+    }
+  }
 }
 
 struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
-    }
+  static var previews: some View {
+    ContentView()
+      .previewDevice("iPhone 11")
+  }
+}
+
+extension Double {
+  func removeZerosFromEnd() -> String {
+    let formatter = NumberFormatter()
+    let number = NSNumber(value: self)
+    formatter.minimumFractionDigits = 0
+    formatter.maximumFractionDigits = 16 //maximum digits in Double after dot (maximum precision)
+    return String(formatter.string(from: number) ?? "")
+  }
 }

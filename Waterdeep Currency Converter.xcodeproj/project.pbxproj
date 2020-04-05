@@ -16,7 +16,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		FF0EFC7C23F4EFAB00B6213B /* Waterdeep Currency Converter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Waterdeep Currency Converter.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		FF0EFC7C23F4EFAB00B6213B /* Waterdeep.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Waterdeep.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF0EFC7F23F4EFAB00B6213B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FF0EFC8123F4EFAB00B6213B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		FF0EFC8323F4EFAB00B6213B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -48,7 +48,7 @@
 		FF0EFC7D23F4EFAB00B6213B /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				FF0EFC7C23F4EFAB00B6213B /* Waterdeep Currency Converter.app */,
+				FF0EFC7C23F4EFAB00B6213B /* Waterdeep.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -92,7 +92,7 @@
 			);
 			name = "Waterdeep Currency Converter";
 			productName = "Waterdeep Currency Converter";
-			productReference = FF0EFC7C23F4EFAB00B6213B /* Waterdeep Currency Converter.app */;
+			productReference = FF0EFC7C23F4EFAB00B6213B /* Waterdeep.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -294,7 +294,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.joshboles.Waterdeep-Currency-Converter";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Waterdeep;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -314,7 +314,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.joshboles.Waterdeep-Currency-Converter";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Waterdeep;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
